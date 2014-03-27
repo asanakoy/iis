@@ -11,10 +11,11 @@ from pprint import pprint
 
 class Expert :
     baseName = ""
-    base = dict()
+    rules = dict()
     knownData = dict()
-    stack = []
-    hasQuestions_ = false
+    aimStack = []
+    rulesStack = []
+    hasQuestions_ = False
 
     def __init__(self, fileName) :
         with open(fileName, "r") as data_file:    
@@ -28,54 +29,40 @@ class Expert :
                 mapData[key] = []
             mapData[key].append((entry["IF"], entry["THEN"][key]))
         print mapData["body type"]
-        self.base = mapData
+        self.rules = mapData
         self.baseName = data["base_name"]
-        self.stack.append(data["aim"])
+        self.aimStack.append(data["aim"])
+        print self.rulesStack
     
     def hasQuestions(self) :
-        return hasQuestions_
+        return self.hasQuestions_
     
     def getNextQuestion(self) :
-        if stack :
-            aim = stack[-1]
-            if aim in knownData :
-                del stack[-1]
-                return
+        while self.aimStack :
+            aim = self.aimStack[-1]
+            if aim in self.knownData :
+                del self.aimStack[-1]
+                if self.rulesStack[-1][0] == aim :
+                    del self.rulesStack[-1]
             else :
+                rules = self.rules[aim]
+                self.rulesStack.append((aim, rules))
                 
+                
+                aim = 
         else :
-            hasQuestions_ = false
+            self.hasQuestions_ = false
         return
+    
+    def setAnswer(self, key, value) :
+        self.knownData[key] = value
+        
+    def GetResult(self) :
+        return 
     
 exp = Expert("tmp.json")
 
 exp.getNextQuestion()
-
-# <codecell>
-
-import easygui as eg
-import sys
-
-title = "Message from test1.py"
-eg.msgbox("Hello, world!", title)
-while 1:
-    
-
-    msg ="What is your favorite flavor?"
-    title = "Ice Cream Survey"
-    choices = ["Vanilla", "Chocolate", "Strawberry", "Rocky Road"]
-    choice = eg.choicebox(msg, title, choices)
-
-    # note that we convert choice to string, in case
-    # the user cancelled the choice, and we got None.
-    #eg.msgbox("You chose: " + str(choice), "Survey Result")
-
-    #msg = "Do you want to continue?"
-    #title = "Please Confirm"
-    if choice:     # show a Continue/Cancel dialog
-        pass  # user chose Continue
-    else:
-        sys.exit(0)           # user chose Cancel
 
 # <codecell>
 
