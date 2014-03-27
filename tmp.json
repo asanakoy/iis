@@ -1,0 +1,93 @@
+{
+
+"base_name" : "Cars",
+"aim" : "name",
+
+"data" :
+[
+    {
+        "IF" : 
+        {
+                "Manufacturer": "LandRover", 
+                "wheels count" : "4"
+        },
+        "THEN" : {"name": "Land Rover Range Rover"}
+    }, 
+    {
+        "IF" : 
+        {
+                "Manufacturer": "Ford", 
+                "wheels count" : "4"
+        },
+        "THEN" : {"name": "Ford Mustang"}
+    },  
+    {
+        "IF" : 
+        {
+        "high cross-country ability" : "No",
+        "doors count" : "5"
+        },
+        "THEN" : {"body type": "Coupe"}
+    }, 
+    {
+        "IF" : 
+        {
+        "high cross-country ability" : "Yes"
+        },
+        "THEN" : {"body type": "sport utility vehicle"}
+    },
+
+    {
+        "IF" : 
+        {
+        "body type": "Coupe"
+        },
+        "THEN" : {"class": "Passenger car"}
+    }, 
+    {
+        "IF" : 
+        {
+        "body type": "sport utility vehicle"
+        },
+        "THEN" : {"class": "Passenger car"}
+    }, 
+    {
+        "IF" : 
+        {
+        "body type" : "седан", 
+        "seats count": "from 4 to 8"
+        },
+        "THEN" : {"class": "Passenger car"}
+    }, 
+    {
+        "IF" : 
+        {
+        "seats count": "more than 8"
+        },
+        "THEN" : {"class": "Bus"}
+    }, 
+    {
+        "IF" : 
+        {
+        "seats count": "less than 4", 
+        "carrying capacity": "> 2 tons"
+        },
+        "THEN" : {"class": "truck"}
+    }, 
+    {
+        "IF" : 
+        {
+        "class": "Passenger car"
+        }, 
+        "THEN" : {"wheels count": "4"}
+    }, 
+    {
+        "IF" : 
+        {
+        "seats count": "less than 4", 
+        "carrying capacity": "> 2 tons"
+        },
+        "THEN" : {"class": "truck"}
+    }
+]
+}
