@@ -4,57 +4,96 @@
 "aim" : "name",
 
 "data" :
-[
+[   
     {
         "IF" : 
         {
-                "Manufacturer": "LandRover", 
-                "wheels count" : "4"
+                "Manufacturer": "MAN", 
+                "class": "bus"
         },
-        "THEN" : {"name": "Land Rover Range Rover"}
+        "THEN" : {"name": "MAN Lion's Regio"}
+    },
+    {
+        "IF" : 
+        {
+                "Manufacturer": "Toyota", 
+                "body type": "sport utility vehicle"
+        },
+        "THEN" : {"name": "Toyota Land Cruiserr"}
+    }, 
+        {
+        "IF" : 
+        {
+                "Manufacturer": "Toyota", 
+                "body type": "Coupe"
+        },
+        "THEN" : {"name": "Toyota Supra"}
+    }, 
+    {
+        "IF" : 
+        {
+                "Manufacturer": "FreightLiner", 
+                "body type": "dump", 
+                "color": "blue"
+        },
+        "THEN" : {"name": "FreightLiner 108SD"}
+    }, 
+    {
+        "IF" : 
+        {
+                "Manufacturer": "FreightLiner", 
+                "body type": "dump", 
+                "color": "white"
+        },
+        "THEN" : {"name": "FreightLiner 108SD"}
+    }, 
+    {
+        "IF" : 
+        {
+                "Manufacturer": "FreightLiner", 
+                "body type": "tanker", 
+                "color": "white"
+        },
+        "THEN" : {"name": "FreightLiner M2 106"}
     }, 
     {
         "IF" : 
         {
                 "Manufacturer": "Ford", 
-                "wheels count" : "4"
+                "body type": "Coupe"
         },
         "THEN" : {"name": "Ford Mustang"}
     },  
     {
         "IF" : 
         {
+                "Manufacturer": "Ford", 
+                "body type": "sport utility vehicle"
+        },
+        "THEN" : {"name": "Ford Explorer"}
+    },
+    {
+        "IF" : 
+        {
         "high cross-country ability" : "No",
-        "doors count" : "5"
+        "doors count" : "5", 
+        "class": "Passenger car"
         },
         "THEN" : {"body type": "Coupe"}
     }, 
     {
         "IF" : 
         {
+        "class": "Passenger car", 
         "high cross-country ability" : "Yes"
         },
         "THEN" : {"body type": "sport utility vehicle"}
     },
 
+
     {
         "IF" : 
         {
-        "body type": "Coupe"
-        },
-        "THEN" : {"class": "Passenger car"}
-    }, 
-    {
-        "IF" : 
-        {
-        "body type": "sport utility vehicle"
-        },
-        "THEN" : {"class": "Passenger car"}
-    }, 
-    {
-        "IF" : 
-        {
-        "body type" : "седан", 
         "seats count": "from 4 to 8"
         },
         "THEN" : {"class": "Passenger car"}
@@ -75,19 +114,32 @@
         "THEN" : {"class": "truck"}
     }, 
     {
-        "IF" : 
+        "IF" :
         {
-        "class": "Passenger car"
+            "class": "truck", 
+            "doors count" : "2", 
+            "wheels count" : "> 18", 
+            "dagerous freight" : "no"
         }, 
-        "THEN" : {"wheels count": "4"}
+        "THEN" : {"body type": "dump"}
+    }, 
+    {
+        "IF" :
+        {
+            "class": "truck", 
+            "doors count" : "2", 
+            "wheels count" : "> 18", 
+            "dagerous freight" : "yes"
+        }, 
+        "THEN" : {"body type": "tanker"}
     }, 
     {
         "IF" : 
         {
         "seats count": "less than 4", 
-        "carrying capacity": "> 2 tons"
+        "carrying capacity": "< 2 tons"
         },
-        "THEN" : {"class": "truck"}
+        "THEN" : {"class": "Passenger car"}
     }
 ]
 }
