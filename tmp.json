@@ -9,7 +9,7 @@
         "IF" : 
         {
                 "Manufacturer": "MAN", 
-                "class": "bus"
+                "body type": "regio bus"
         },
         "THEN" : {"name": "MAN Lion's Regio"}
     },
@@ -90,7 +90,13 @@
         "THEN" : {"body type": "sport utility vehicle"}
     },
 
-
+    {
+        "IF" : 
+        {
+        "class": "Bus"
+        },
+        "THEN" : {"body type": "regio bus"}
+    },
     {
         "IF" : 
         {
@@ -118,7 +124,6 @@
         {
             "class": "truck", 
             "doors count" : "2", 
-            "wheels count" : "> 18", 
             "dagerous freight" : "no"
         }, 
         "THEN" : {"body type": "dump"}
@@ -128,7 +133,6 @@
         {
             "class": "truck", 
             "doors count" : "2", 
-            "wheels count" : "> 18", 
             "dagerous freight" : "yes"
         }, 
         "THEN" : {"body type": "tanker"}
